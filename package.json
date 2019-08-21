@@ -1,0 +1,27 @@
+{
+  "name": "lock-background-scroll",
+  "version": "1.0.1",
+  "description": "prevent body or parent scroll element scroll, just for iOS",
+  "main": "LockBgScroll.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zeyongTsai/lock-background-scroll.git"
+  },
+  "keywords": [
+    "prevent",
+    "scroll",
+    "lock",
+    "body",
+    "modal",
+    "scroll"
+  ],
+  "author": "zeyong.tsai",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/zeyongTsai/lock-background-scroll/issues"
+  },
+  "homepage": "https://github.com/zeyongTsai/lock-background-scroll#readme"
+}
