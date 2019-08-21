@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>prevent background scroll</title>
+  <style>
+    .box {
+      height: 150px;
+      background-color: aliceblue;
+    }
+    .bg-red {
+      background-color: darkred;
+    }
+    .bg-blue {
+      background-color: deepskyblue;
+    }
+    .bg-green {
+      background-color: aquamarine;
+    }
+    .bg-dark {
+      background-color: darkslategray;
+    }
+
+    .modal {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100vh;
+      width: 100vw;
+      background-color: rgba(0, 0, 0, 0.5);
+      display: none;
+    }
+    .modal.show {
+      display: block;
+    }
+    .modal__content {
+      width: 100%;
+      height: 420px;
+      background-color: #FFF;
+      position: absolute;
+      bottom: 0;
+    }
+    .modal__head {
+      height: 32px;
+      line-height: 32px;
+      border-bottom: 1px solid #ccc;
+    }
+    .modal__body {
+      height: calc(320px - 33px);
+      overflow: scroll;
+      -webkit-overflow-scrolling: touch;
+    }
+    .modal__close {
+      float: right;
+    }
+  </style>
+</head>
+<body>
+  <div class="box"></div>
+  <div class="box bg-red"></div>
+  <div class="box bg-green"></div>
+  <div class="box bg-blue"></div>
+  <div class="box bg-green"></div>
+  <div class="box bg-red"></div>
+  <div class="box bg-blue"></div>
+  <div class="box bg-dark"></div>
+  <div class="box bg-red"></div>
+  <div class="box bg-dark"></div>
+  <button type="button" class="btn">show modal</button>
+
+  <button type="button" class="btn1">destroy</button>
+
+  <div class="modal">
+    <div class="modal__content">
+      <div class="modal__head">
+        modal title
+        <span class="modal__close">close</span>
+      </div>
+      <div class="modal__body" data-scroll-container="1">
+        <ul>
+          <li>1</li>
+          <li>2</li>
+          <li>3</li>
+          <li>4</li>
+          <li>5</li>
+          <li>6</li>
+          <li>7</li>
+          <li>8</li>
+          <li>8</li>
+          <li>7</li>
+          <li>6</li>
+          <li>5</li>
+          <li>4</li>
+          <li>3</li>
+          <li>2</li>
+          <li>1</li>
+          <li>1</li>
+          <li>2</li>
+          <li>3</li>
+          <li>4</li>
+          <li>5</li>
+          <li>6</li>
+          <li>7</li>
+          <li>8</li>
+          <li>8</li>
+          <li>7</li>
+          <li>6</li>
+          <li>5</li>
+          <li>4</li>
+          <li>3</li>
+          <li>2</li>
+          <li>1</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <script src="./LockBgScroll.js"></script>
+  <script>
+  var btn = document.querySelector('button.btn')
+  var btn1 = document.querySelector('button.btn1')
+  var modal = document.querySelector('.modal')
+  var close = document.querySelector('.modal__close')
+
+  btn.addEventListener('click', () => {
+    modal.classList.add('show')
+  })
+  close.addEventListener('click', () => {
+    modal.classList.remove('show')
+  })
+
+  let lbs = new LockBgScroll(modal).init()
+
+  btn1.addEventListener('click', () => {
+    lbs.destroy()
+  })
+
+  </script>
+</body>
+</html>
