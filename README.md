@@ -19,11 +19,11 @@ let lbs = new LockBgScroll(modal).init()
 // destroy it when page or component unload
 // lbs.destroy()
 ```
-If there are some scrollable children element inside of `.modal` element, add `data-scroll-container="1"` to them
+If there are some scrollable children element inside of `.modal` element, add `data-scroll-container` attribute to them
 ```html
 <div class="modal">
   <div class="modal__head"></div>
-  <div class="modal__body" data-scroll-container="1">
+  <div class="modal__body" data-scroll-container>
     ...
   </div>
 </div>
