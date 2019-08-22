@@ -1,8 +1,8 @@
 {
   "name": "lock-background-scroll",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "description": "prevent body or parent scroll element scroll, just for iOS",
-  "main": "LockBgScroll.js",
+  "main": "LockBgScroll.mjs",
   "scripts": {
     "test": "test"
   },

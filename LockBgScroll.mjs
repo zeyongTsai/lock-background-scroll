@@ -66,7 +66,7 @@ function findScrollParent (elm, rootElm) {
   let parent = elm
   while (parent) {
     // if element has data attribute scroll-container
-    if (parent.dataset.scrollContainer) {
+    if (parent.dataset.scrollContainer === '') {
       elm.scrollParent = parent
       return elm.scrollParent
     // if element.scrollParent is en Element

@@ -78,7 +78,7 @@
         modal title
         <span class="modal__close">close</span>
       </div>
-      <div class="modal__body" data-scroll-container="1">
+      <div class="modal__body" data-scroll-container>
         <ul>
           <li>1</li>
           <li>2</li>
@@ -116,8 +116,8 @@
       </div>
     </div>
   </div>
-  <script src="./LockBgScroll.js"></script>
-  <script>
+  <script type="module">
+    import LockBgScroll from './LockBgScroll.mjs'
   var btn = document.querySelector('button.btn')
   var btn1 = document.querySelector('button.btn1')
   var modal = document.querySelector('.modal')
